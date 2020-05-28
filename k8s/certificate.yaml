@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+    name: kubelicious-com-tls
+spec:
+    secretName: kubelicious-com-tls
+    issuerRef: 
+        name: letsencrypt-prod
+        kind: ClusterIssuer
+    commonName: kubelicious.com
+    dnsNames:
+        - kubelicious.com
+        - www.kubelicious.com
+    acme:
+        config:
+            - http01:
+                ingressClass: nginx
+              domains:
+                  - kubelicious.com
+                  - www.kubelicious.com
