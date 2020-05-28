@@ -12,7 +12,7 @@ spec:
     - hosts:
         - kubelicious.com
         - www.kubelicious.com
-      secretName: kubelicious-com
+      secretName: kubelicious-com-tls
   rules:
     - host: kubelicious.com
       http:
